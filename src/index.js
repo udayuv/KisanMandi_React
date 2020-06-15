@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import './index.css';
-import KisanMandi from './component/KisanMandi';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ProductProvider } from './component/api/context';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <KisanMandi/>
-  </React.StrictMode>,
+  <ProductProvider>
+    <Router>
+      <App />
+    </Router>
+  </ProductProvider>,
   document.getElementById('root')
 );
 
